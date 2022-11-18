@@ -1,0 +1,9 @@
+<div>
+  <span class="px-2">
+    {{ quote.quote }}
+  </span>
+  <span class="pt-1" *ngIf="quote.author !== ''"> - {{ quote.author }} </span>
+  <span class="pt-1">
+    {{ timeoutMs / interval }}
+  </span>
+</div>
