@@ -13,17 +13,14 @@ export class AppComponent implements OnInit {
 
   interval = 1000;
 
-  timeoutMs = 0;
-
   timeoutMax = 5 * 1000;
+
+  timeoutMs = this.timeoutMax;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.timeoutMs = this.timeoutMax;
-
     setInterval(() => {
-      console.log('loop');
       if (this.timeoutMs === 0) {
         this.timeoutMs = this.timeoutMax;
         this.loadQuote();
