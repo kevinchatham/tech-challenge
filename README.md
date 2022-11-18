@@ -75,4 +75,4 @@ Example of app error:
 
 `npm i` : Install packages
 
-`npx ng serve` : Launch at http://localhost:4200
+`npm run start` : Launch at http://localhost:4200
