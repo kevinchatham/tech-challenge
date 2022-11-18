@@ -1,6 +1,6 @@
 # Quote Service - Technical Challenge
 
-This goal of this challenge is to create a basic SpringBoot REST API that calls [DummyJson](https://dummyjson.com/) for a random quote the App will display.
+The goal of this challenge is to create a basic SpringBoot REST API that calls [DummyJson](https://dummyjson.com/) for a random quote the App will display.
 
 **_Bonus points for also writing a unit test._**
 
