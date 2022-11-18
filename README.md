@@ -52,7 +52,7 @@ interface Quote {
 }
 ```
 
-The App is already written and you can use it to demo your work. On launch a call to `GET` http://localhost:8080/quotes/random will occur every 5 seconds. A message and console log will be displayed on error.
+The App is already written and you can use it to demo your work. On launch a call to `GET` http://localhost:8080/quotes/random will occur every ten seconds. A message and console log will be displayed on error.
 
 Example of app working:
 

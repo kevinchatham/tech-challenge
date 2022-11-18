@@ -13,15 +13,18 @@ export class AppComponent implements OnInit {
 
   interval = 1000;
 
-  timeoutMax = 5 * 1000;
+  timeoutMax = 10 * 1000;
 
   timeoutMs = this.timeoutMax;
+
+  firstRun = true;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     setInterval(() => {
-      if (this.timeoutMs === 0) {
+      if (this.firstRun || this.timeoutMs === 0) {
+        this.firstRun = false;
         this.timeoutMs = this.timeoutMax;
         this.loadQuote();
       } else {
@@ -39,7 +42,7 @@ export class AppComponent implements OnInit {
     const serviceUrl = 'http://localhost:8080/quotes/random';
 
     this.http
-      .get<Quote>(serviceUrl)
+      .get<Quote>(exampleUrl)
       .pipe(
         first(),
         map((quote) => {
@@ -49,7 +52,7 @@ export class AppComponent implements OnInit {
           console.error(error);
           this.quote = {
             id: 0,
-            quote: `Error: ${error.statusText}`,
+            quote: `${error.status} : ${error.statusText}`,
             author: '',
           };
           return of([]);
