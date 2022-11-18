@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
     const serviceUrl = 'http://localhost:8080/quotes/random';
 
     this.http
-      .get<Quote>(exampleUrl)
+      .get<Quote>(serviceUrl)
       .pipe(
         first(),
         map((quote) => {
